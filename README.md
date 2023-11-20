@@ -9,6 +9,8 @@ you to build and manage the following parts of the stack:
 
 ## The Project
 
+<img src="screenshot.png">
+
 Your task is to create a small Voting App where people can vote on their favourite picture from a list, and the owner of the App can manage the votes.
 
 You will need to create the following pages:
