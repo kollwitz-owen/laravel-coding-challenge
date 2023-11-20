@@ -2,8 +2,9 @@
 {
     "name": "Laravel Sail",
     "dockerComposeFile": ["../docker-compose.yml"],
-    "service": "laravel.test",
-    "workspaceFolder": "/var/www/html",
+    "service": "mysql",
+    "workspaceFolder": "/",
+    // "workspaceFolder": "/var/www/html",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -28,8 +29,8 @@
             }
         }
     },
-    "remoteUser": "sail",
-    "postCreateCommand": "chmod  o+w /var/www/html && cp .env.example .env && composer install && php artisan key:generate && php artisan storage:link --force && php artisan migrate --force --seed && npm install",
+    "remoteUser": "root",
+    // "postCreateCommand": "chmod  o+w /var/www/html && cp .env.example .env && composer install && php artisan key:generate && php artisan storage:link --force",
     // "postStartCommand": "npm run dev",
     "forwardPorts": [80, 8025, 8080, 6001, 5173, 8900],
     "portsAttributes": {
@@ -51,6 +52,9 @@
         },
         "8900": {
             "label": "Minio"
+        },
+        "6306": {
+            "label": "MySQL"
         }
     }
 }
