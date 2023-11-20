@@ -1,5 +1,5 @@
 # From official php image.
-FROM php:8.3-rc-cli-alpine
+FROM 8.3.0RC6-cli
 # Create a user group and account under id 1000.
 RUN addgroup -g 1000 -S user && adduser -u 1000 -D user -G user
 # Install quality-of-life packages.
