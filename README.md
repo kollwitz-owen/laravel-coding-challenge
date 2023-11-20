@@ -1,67 +1,92 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## KO Coding Challenge
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This repo is a skeleton setup of a Laravel project. Your task is to add some features to it in a way that follows best practices. The project will require
+you to build and manage the following parts of the stack:
 
-## About Laravel
+-   Database Entries
+-   Back-end Form Submission Handling
+-   Front-end Data Display
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## The Project
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Your task is to create a small Voting App where people can vote on their favourite picture from a list, and the owner of the App can manage the votes.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+You will need to create the following pages:
 
-## Learning Laravel
+### Page 1: Pictures Index
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   This page will show a list of pictures from a known set to the `Voters`.
+-   It will also show the total number of votes submitted so far and a link to
+    the `Results` page via a link that says `View all results`.
+-   When the `Voter` clicks on any given image, the page will navigate to the
+    `View Single Image` page to get a bigger look at that image.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Page 2: View Single Image
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   This page will show a single image from the known set of images.
+-   It will also have `View Previous Picture` and `View Next Picture` links
+    underneath the picture which will navigate the user to the `View Single Image` page for the previous/next picture in the set.
+-   It will also show a form underneath which allows a `Voter` to submit that
+    this is their favourite image.
+-   The form will have three things in it:
+    1. A heading that says `Vote for this image as your favourite`
+    2. A `name` text field (limited to 100 input characters)
+    3. A `submit` button whose text says `This is my favourite`
+-   If the `name` field is not filled, the submission should not complete
+    successfully and some validation message should be returned to the user on
+    the page.
+-   When submitted successfully, the form will post the submission to the backend to be processed
 
-## Laravel Sponsors
+### Page 3: Results
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+This page will show a table with all the votes cast so far.
 
-### Premium Partners
+The table will have two columns:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+-   `Name` - the names of the voters as submitted in the form on the
+    `Page 2: View Single Image`
+-   `Favourite Picture` - a small version of the picture that the user had voted
+    upon. The picture will be a hyperlink to the `Page 2: View Single Image` for
+    that image.
 
-## Contributing
+By default, the table will be sorted A-Z by the `name` column's contents.
+The user must be able to change the sorting of the column to sort by the
+`Favourite Picture` column.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Sourcing The Pictures
 
-## Code of Conduct
+Please use the images available on [`Lorum Picsum`](https://picsum.photos/images#2).
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+The images can be referred to by simple integer ids and can be rendered in HTML
+like so:
 
-## Security Vulnerabilities
+```html
+<img src="https://picsum.photos/id/{{ $image_id }}/{{ $width }}/{{ $height }}>
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+ie `Picture #50 at 200x200px`:
 
-## License
+```html
+<img src="https://picsum.photos/id/50/200/200>
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# sample-project
+Please use about 30 images, starting from number 30.
+
+## Technical Notes
+
+-   Please use the built-in Laravel skeleton project to implement this
+    functionality
+-   These requirements are very high-level because we want to give you the
+    flexibility to implement them as you see fit.
+-   Visual design is not important for this task, do whatever you need to do
+    as long as the site is usable.
+-   No authentication / login is required
+-   Demonstrate your ability to write some tests
+-   On form submission, if a user with that name already has an existing vote
+    recorded, overwrite it with the new value
+-   De-duplicate voters' names by being case-insensitive and whitespace-insensitive.
+
+### Running the Laravel Project Locally
+
+1. Checkout this repo somewhere
+2. `cd` into this project's root directory and run `docker-compose up`
