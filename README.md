@@ -87,8 +87,6 @@ Please use about 30 images, starting from number 30.
 
 ## Technical Notes
 
--   Please use the built-in Laravel skeleton project to implement this
-    functionality
 -   These requirements are very high-level because we want to give you the
     flexibility to implement them as you see fit.
 -   Visual design is not important for this task, do whatever you need to do
@@ -98,8 +96,6 @@ Please use about 30 images, starting from number 30.
 -   On form submission, if a user with that name already has an existing vote
     recorded, overwrite it with the new value
 -   De-duplicate voters' names by being case-insensitive and whitespace-insensitive.
-
-### Running the Laravel Project Locally
-
-1. Checkout this repo somewhere
-2. `cd` into this project's root directory and run `docker-compose up`
+-   Please deliver a Laravel project repo in your submission
+    -   Don't forget to provide a working `.env`
+    -   Please include the database migrations (and seed files if applicable)
