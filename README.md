@@ -9,7 +9,16 @@ you to build and manage the following parts of the stack:
 
 ## The Project
 
-<img src="screenshot.png">
+<table>
+    <tr>
+        <td>
+            <img src="screenshot.png">
+        </td>
+        <td>
+            <img src="screenshot-2.png">
+        </td> 
+    </tr>
+</table>
 
 Your task is to create a small Voting App where people can vote on their favourite picture from a list, and see the results.
 
@@ -28,7 +37,7 @@ You will need to create the following pages:
 -   This page will show a single image from the known set of images.
 -   It will also have `View Previous Picture` and `View Next Picture` links
     underneath the picture which will navigate the user to the `View Single Image` page for the previous/next picture in the set.
--   It will also show a form underneath which allows a `Voter` to submit that
+-   It will also show a form underneath which allows a user to submit that
     this is their favourite image.
 -   The form will have three things in it:
     1. A heading that says `Vote for this image as your favourite`
