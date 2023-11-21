@@ -1,7 +1,7 @@
 ## KO Coding Challenge
 
-This repo is a skeleton setup of a Laravel project. Your task is to add some features to it in a way that follows best practices. The project will require
-you to build and manage the following parts of the stack:
+Your task is to create a small web application and add some features to it in a
+way that follows best practices. The project will require you to build and manage the following parts of the stack:
 
 -   Database Entries
 -   Back-end Form Submission Handling
