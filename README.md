@@ -72,13 +72,15 @@ The images can be referred to by simple integer ids and can be rendered in HTML
 like so:
 
 ```html
-<img src="https://picsum.photos/id/{{ $image_id }}/{{ $width }}/{{ $height }}>
+<img
+    src="https://picsum.photos/id/{{ $image_id }}/{{ $width }}/{{ $height }}"
+/>
 ```
 
 ie `Picture #50 at 200x200px`:
 
 ```html
-<img src="https://picsum.photos/id/50/200/200>
+<img src="https://picsum.photos/id/50/200/200" />
 ```
 
 Please use about 30 images, starting from number 30.
