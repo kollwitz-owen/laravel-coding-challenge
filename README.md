@@ -26,19 +26,18 @@ You will need to create the following pages:
 
 ### Page 1: Pictures Index
 
--   This page will show a list of pictures from a known set to the `Voters`.
+-   This page will show a list of pictures from a known set to the user.
 -   It will also show the total number of votes submitted so far and a link to
     the `Results` page via a link that says `View all results`.
--   When the `Voter` clicks on any given image, the page will navigate to the
+-   When the user clicks on any given image, the page will navigate to the
     `View Single Image` page to get a bigger look at that image.
 
 ### Page 2: View Single Image
 
 -   This page will show a single image from the known set of images.
--   It will also have `View Previous Picture` and `View Next Picture` links
-    underneath the picture which will navigate the user to the `View Single Image` page for the previous/next picture in the set.
--   It will also show a form underneath which allows a user to submit that
-    this is their favourite image.
+-   It will also have links to `View Previous Picture` and `View Next Picture`
+    which will navigate the user to the `View Single Image` page for the previous/next picture in the set.
+-   It will also show a form which allows a user to submit that this is their favourite image.
 -   The form will have three things in it:
     1. A heading that says `Vote for this image as your favourite`
     2. A `name` text field (limited to 100 input characters)
